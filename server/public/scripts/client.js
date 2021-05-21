@@ -15,11 +15,7 @@ function readyNow() {
 
 
 //#region ⬇ Global variables below:
-let userEquationObject = {
-  leftInput: 0,
-  rightInput: 0,
-  operator: '',
-};
+let userEquationObject = {};
 //#endregion ⬆ Global variables above. 
 console.log('Line 24, userEquationObject is: ', userEquationObject);
 
@@ -55,10 +51,8 @@ function clickedEquals() {
   let leftInput = $('#leftInput').val();
   let rightInput = $('#rightInput').val();
   // ⬇ Adding those inputs to the userEquationObject:
-  userEquationObject = {
-    leftInput: leftInput, 
-    rightInput: rightInput,
-  };
+  userEquationObject.leftInput = leftInput;
+  userEquationObject.rightInput = rightInput;
   console.log('Test Log: userEquationObject is:', userEquationObject);
   // ⬇ Clearing input values (and object?) on click:
   $('.numberInputs').val('');
@@ -71,9 +65,7 @@ function clickedEquals() {
 //#region ⬇ clickedPlus functionality below: 
 function clickedPlus() {
   console.log('Test Log: in clickedPlus');
-  userEquationObject = {
-    operator: '+',
-  };
+  userEquationObject.operator = '+';
 } // End clickedPlus.
 //#endregion ⬆ clickedPlus functionality above. 
 
@@ -81,19 +73,7 @@ function clickedPlus() {
 //#region ⬇ clickedMinus functionality below: 
 function clickedMinus() {
   console.log('Test Log: in clickedMinus');
-  userEquationObject = {
-    operator: '-',
-  };
-} // End clickedMinus.
-//#endregion ⬆ clickedMinus functionality above. 
-
-
-//#region ⬇ clickedMinus functionality below: 
-function clickedMinus() {
-  console.log('Test Log: in clickedMinus');
-  userEquationObject = {
-    operator: '-',
-  };
+  userEquationObject.operator = '-';
 } // End clickedMinus.
 //#endregion ⬆ clickedMinus functionality above. 
 
@@ -101,9 +81,7 @@ function clickedMinus() {
 //#region ⬇ clickedMultiply functionality below: 
 function clickedMultiply() {
   console.log('Test Log: in clickedMultiply');
-  userEquationObject = {
-    operator: '*',
-  };
+  userEquationObject.operator = '*';
 } // End clickedMultiply.
 //#endregion ⬆ clickedMultiply functionality above. 
 
@@ -111,9 +89,7 @@ function clickedMultiply() {
 //#region ⬇ clickedDivide functionality below: 
 function clickedDivide() {
   console.log('Test Log: in clickedDivide');
-  userEquationObject = {
-    operator: '/',
-  };
+  userEquationObject.operator = '/';
 } // End clickedDivide.
 //#endregion ⬆ clickedDivide functionality above. 
 
