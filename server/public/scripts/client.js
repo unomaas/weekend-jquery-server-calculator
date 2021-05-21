@@ -1,3 +1,4 @@
+//#region ⬇ All document setup and global variables below:
 //#region ⬇ readyNow document ready functionality below:
 $( readyNow );
 function readyNow() {
@@ -18,6 +19,8 @@ function readyNow() {
 //#region ⬇ Global variables below:
 let userEquationObject = {};
 //#endregion ⬆ Global variables above. 
+//#endregion ⬆ All document setup and global variables above. 
+
 
 //#region ⬇ All GET/POST functionality below: 
 //#region ⬇ renderDom functionality below, runs on page load:
@@ -27,6 +30,7 @@ function renderDom() { // AKA "Get Messages"
     type: 'GET', 
     url: '/priorEquations'
   }).then( function( response ) {
+    console.log( response );
     // ⬇ Empty and append each time this runs: 
     let historyOutput = $( '#historyOutput' );
     historyOutput.empty();
@@ -59,6 +63,7 @@ function clickedEquals() { // AKA "Send Messages" / "SUBMIT"
     url: '/priorEquations',
     data: userEquationObject,
   }).then( function( response ){
+    console.log( response );
     // ⬇ GET & Re-render DOM with updated information:
     renderDom();
   }).catch( function( error ) {
@@ -70,7 +75,7 @@ function clickedEquals() { // AKA "Send Messages" / "SUBMIT"
 //#endregion ⬆ All GET/POST functionality  above. 
 
 
-//#region ⬇ All button functionality below:
+//#region ⬇ All operator button functionality below:
 //#region ⬇ clickedPlus functionality below: 
 function clickedPlus() {
   console.log( 'Test Log: in clickedPlus' );
@@ -110,7 +115,7 @@ function clickedClear() {
   $( '.numberInputs' ).val('');
 } // End clickedClear.
 //#endregion ⬆ clickedClear functionality above. 
-//#endregion ⬆ All input/button functionality above. 
+//#endregion ⬆ All operator button functionality above. 
 
 // let roundInfo = [];
 
