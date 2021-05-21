@@ -19,21 +19,18 @@ const priorEquations = []; // Empty array to hold prior equation's objects.
 //#endregion ⬆ Creating server-side variables above. 
 
 //#region ⬇ GET & POST Routes below:
-app.get('/results', (req, res) => {
-  console.log('Got to /results');
-  let roundObject = {
-    rounds : roundCount
-  }
-  guessArray.push(roundObject);
-  res.send(guessArray);
+// ⬇ GET priorEquations to load on DOM: 
+app.get('/priorEquations', ( req, res ) => {
+  console.log( 'Got to /priorEquations' );
+  res.send( priorEquations );
 });
 
-app.post('/guesses', (req, res) => {
+app.post('/guesses', ( req, res ) => {
   guesses = req.body;
-  console.log(guesses); 
-  checkGuesses(guesses);
+  console.log( guesses ); 
+  checkGuesses( guesses) ;
   countRounds();
-  res.sendStatus(201);
+  res.sendStatus( 201 );
 }) //for posting guesses from client.js
 //#endregion ⬆ GET & POST Routes above.
 

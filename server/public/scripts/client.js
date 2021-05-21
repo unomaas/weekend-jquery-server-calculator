@@ -1,22 +1,47 @@
-
 //#region ⬇ readyNow document ready functionality below:
-$(readyNow);
+$( readyNow );
 function readyNow() {
   // ⬇ Document ready & rendered:
-  console.log("jQuery is loaded!")
+  console.log( "jQuery is loaded!" ) 
   renderDom();
   // ⬇ Click listeners below:
-
-
-  
+  $( '#equalsButton' ).on( 'click', clickedEquals );
 } // End handleReady function. 
 //#endregion ⬆ readyNow document ready functionality above. 
 
+
 //#region ⬇ renderDom functionality below, runs on page load:
 function renderDom() {
-
+  // ⬇ Get the priorEquations from the server:
+  $.ajax({
+    type: 'GET', 
+    url: '/priorEquations'
+  }).then( function( response ) {
+    // ⬇ Empty and append each time this runs: 
+    let historyOutput = $( '#historyOutput' );
+    historyOutput.empty();
+    // for ( let i=0; i<response.length; i++ ) {
+    //   let priorEquations = response[i];
+    //   historyOutput.append(`
+    //     <li>${leftInput}.val() ${.operatorSelected} ${rightInput}.val() = ${result}</li>
+    //   `) // Put a pin in this for now, go see how the inputs make an object, then we can reference them here.  
+    // } // End for loop. 
+  }).catch( function( error ) {
+    alert( 'Unable to get prior equations, please try again later.' )
+    console.log( error );
+  }) // End Ajax .then & .catch.
 } // End renderDom function. 
 //#endregion ⬆ renderDom functionality above. 
+
+
+//#region ⬇ clickedEquals functionality below:
+function clickedEquals() {
+  console.log('Test Log: in clickedEquals');
+  // ⬇ Declaring variables to hold each input value:
+  
+} // End clickedEquals function. 
+//#endregion ⬆ clickedEquals functionality above. 
+
 
 // let roundInfo = [];
 

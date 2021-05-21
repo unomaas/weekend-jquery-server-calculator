@@ -2,7 +2,7 @@
 
 - [X] SERVER SETUP FILE STRUCTURE
     - [X] Make .gitignore file in root folder
-    - [] Make readme.md file in root folder (optional, but recommended)
+    - [] Make readme.md file in root folder
         - [X] Make server folder in root folder
             - [X] Make server.js file in server folder
             - [X] Make modules folder
