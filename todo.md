@@ -23,11 +23,11 @@
 
 - [] LOGIC FUNCTIONALITY
   - [] On page load, have everything displayed via GET function. 
-  - [] User inputs two values.
-  - [] User selects mathematical operation.
-  - [] When the submit button (=) is clicked:
-    - [] capture the input, 
-    - [] put into object, 
+  - [x] User inputs two values.
+  - [x] User selects mathematical operation.
+  - [x] When the submit button (=) is clicked:
+    - [x] capture the input, 
+    - [x] put into object, 
     - [] send this object to the server via a POST. 
   - [] The clear button should clear the user input fields. 
 
