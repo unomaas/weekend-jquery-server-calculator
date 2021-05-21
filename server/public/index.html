@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weekend #2 jQuery Server Calculator</title>
+  <script src="vendors/jQuery.js"></script>
+  <script src="scripts/client.js"></script>
+  <link rel="stylesheet" href="vendors/bootstrap.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="shortcut icon" href="vendors/favicon.ico" type="image/x-icon">
+</head>
+  <body>
+    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+    <header>
+      <h1>Server-side Calculator</h1>
+    </header>
+    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+
+    <!-- Area for Inputs and Buttons Below: -->
+    <section id="inputArea">
+      <input class="inputs" id="leftInput" type="number" placeholder="First Number?">
+      <button class="operator" id="plusButton">+</button>
+      <button class="operator" id="minusButton">-</button>
+      <button class="operator" id="multiplyButton">*</button>
+      <button class="operator" id="divideButton">/</button>
+      <input class="inputs" id="rightInput" type="number" placeholder="Second Number?">
+      <button class="" id="equalsButton">=</button>
+      <button class="" id="clearButton">Clear</button>
+    </section>
+    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+
+    <!-- Area for Result Display Below: -->
+    <section>
+      <h3 id="resultOutput">The result of that is <label id="resultOutput">${result}.</label></h3>
+    </section>
+    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+
+    <!-- Area for Historical Record Below: -->
+    <section>
+      <h4>Prior Equation History:</h4>
+      <ul id="historyOutput">
+        <li>${leftInput}.val() ${.operatorSelected} ${rightInput}.val() = ${result}</li>
+      </ul>
+    </section>
+
+  </body>
+</html>
