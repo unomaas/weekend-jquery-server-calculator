@@ -6,30 +6,44 @@ function readyNow() {
   renderDom();
   // ⬇ Click listeners below:
   $( '#equalsButton' ).on( 'click', clickedEquals );
+  $( '#plusButton' ).on( 'click', clickedPlus );
+  $( '#minusButton' ).on( 'click', clickedMinus );
+  $( '#multiplyButton' ).on( 'click', clickedMultiply );
+  $( '#divideButton' ).on( 'click', clickedDivide );
 } // End handleReady function. 
 //#endregion ⬆ readyNow document ready functionality above. 
+
+
+//#region ⬇ Global variables below:
+let userEquationObject = {
+  leftInput: 0,
+  rightInput: 0,
+  operator: '',
+};
+//#endregion ⬆ Global variables above. 
+console.log('Line 24, userEquationObject is: ', userEquationObject);
 
 
 //#region ⬇ renderDom functionality below, runs on page load:
 function renderDom() {
   // ⬇ Get the priorEquations from the server:
-  $.ajax({
-    type: 'GET', 
-    url: '/priorEquations'
-  }).then( function( response ) {
-    // ⬇ Empty and append each time this runs: 
-    let historyOutput = $( '#historyOutput' );
-    historyOutput.empty();
-    // for ( let i=0; i<response.length; i++ ) {
-    //   let priorEquations = response[i];
-    //   historyOutput.append(`
-    //     <li>${leftInput}.val() ${.operatorSelected} ${rightInput}.val() = ${result}</li>
-    //   `) // Put a pin in this for now, go see how the inputs make an object, then we can reference them here.  
-    // } // End for loop. 
-  }).catch( function( error ) {
-    alert( 'Unable to get prior equations, please try again later.' )
-    console.log( error );
-  }) // End Ajax .then & .catch.
+  // $.ajax({
+  //   type: 'GET', 
+  //   url: '/priorEquations'
+  // }).then( function( response ) {
+  //   // ⬇ Empty and append each time this runs: 
+  //   let historyOutput = $( '#historyOutput' );
+  //   historyOutput.empty();
+  //   for ( let i=0; i<response.length; i++ ) {
+  //     let priorEquations = response[i];
+  //     historyOutput.append(`
+  //       <li>${leftInput}.val() ${.operatorSelected} ${rightInput}.val() = ${result}</li>
+  //     `) // Put a pin in this for now, go see how the inputs make an object, then we can reference them here.  
+  //   } // End for loop. 
+  // }).catch( function( error ) {
+  //   alert( 'Unable to get prior equations, please try again later.' )
+  //   console.log( error );
+  // }) // End Ajax .then & .catch.
 } // End renderDom function. 
 //#endregion ⬆ renderDom functionality above. 
 
@@ -38,9 +52,70 @@ function renderDom() {
 function clickedEquals() {
   console.log('Test Log: in clickedEquals');
   // ⬇ Declaring variables to hold each input value:
-  
+  let leftInput = $('#leftInput').val();
+  let rightInput = $('#rightInput').val();
+  // ⬇ Adding those inputs to the userEquationObject:
+  userEquationObject = {
+    leftInput: leftInput, 
+    rightInput: rightInput,
+  };
+  console.log('Test Log: userEquationObject is:', userEquationObject);
+  // ⬇ Clearing input values (and object?) on click:
+  $('.numberInputs').val('');
+  // ⬇ Re-render DOM with updated information on click:
+  renderDom();
 } // End clickedEquals function. 
 //#endregion ⬆ clickedEquals functionality above. 
+
+
+//#region ⬇ clickedPlus functionality below: 
+function clickedPlus() {
+  console.log('Test Log: in clickedPlus');
+  userEquationObject = {
+    operator: '+',
+  };
+} // End clickedPlus.
+//#endregion ⬆ clickedPlus functionality above. 
+
+
+//#region ⬇ clickedMinus functionality below: 
+function clickedMinus() {
+  console.log('Test Log: in clickedMinus');
+  userEquationObject = {
+    operator: '-',
+  };
+} // End clickedMinus.
+//#endregion ⬆ clickedMinus functionality above. 
+
+
+//#region ⬇ clickedMinus functionality below: 
+function clickedMinus() {
+  console.log('Test Log: in clickedMinus');
+  userEquationObject = {
+    operator: '-',
+  };
+} // End clickedMinus.
+//#endregion ⬆ clickedMinus functionality above. 
+
+
+//#region ⬇ clickedMultiply functionality below: 
+function clickedMultiply() {
+  console.log('Test Log: in clickedMultiply');
+  userEquationObject = {
+    operator: '*',
+  };
+} // End clickedMultiply.
+//#endregion ⬆ clickedMultiply functionality above. 
+
+
+//#region ⬇ clickedDivide functionality below: 
+function clickedDivide() {
+  console.log('Test Log: in clickedDivide');
+  userEquationObject = {
+    operator: '/',
+  };
+} // End clickedDivide.
+//#endregion ⬆ clickedDivide functionality above. 
 
 
 // let roundInfo = [];
