@@ -13,44 +13,42 @@
 </head>
   <body>
     
-    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
-    <header>
-      <h1>Server-side Calculator</h1>
-    </header>
-    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); height: 100vh;">
+      <br><br><br><br> 
+      <header>
+        <h1>Ryan's Server-side Calculator</h1>
+      </header>
+      <br><br> 
 
-    <!-- Area for Inputs and Buttons Below: -->
-    <section id="inputArea">
-      <input type="number" id="leftInput" class="numberInputs" placeholder="First Number?">
-      <!-- Not sure if inputs as buttons or buttons as buttons is best, below: -->
-      <!-- <input type="button" id="plusButton" class="operator" value="+">
-      <input type="button" id="minusButton" class="operator" value="-">
-      <input type="button" id="multiplyButton" class="operator" value="*">
-      <input type="button" id="divideButton" class="operator" value="/"> -->
-      <button id="plusButton" class="operator">+</button>
-      <button id="minusButton" class="operator">-</button>
-      <button id="multiplyButton" class="operator">*</button>
-      <button id="divideButton" class="operator">/</button>
-      <input type="number" id="rightInput" class="numberInputs" placeholder="Second Number?">
-      <button id="equalsButton" class="">=</button>
-      <button id="clearButton" class="">Clear</button> 
-    </section>
-    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+      <!-- Area for Inputs and Buttons Below: -->
+      <section id="inputArea">
+        <input type="number" id="leftInput" class="numberInputs" placeholder="First Number?">
+        <button id="plusButton" class="operator">+</button>
+        <button id="minusButton" class="operator">-</button>
+        <button id="multiplyButton" class="operator">*</button>
+        <button id="divideButton" class="operator">/</button>
+        <input type="number" id="rightInput" class="numberInputs" placeholder="Second Number?">
+        <button id="equalsButton" class="">=</button>
+        <button id="clearButton" class="">Clear</button> 
+      </section>
+      <br><br> 
 
-    <!-- Area for Equation Result Display Below: -->
-    <section>
-      <h3>The result of that is equation is:<br>
-        <label id="resultOutput"></label></h3>
-    </section>
-    <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
+      <!-- Area for Equation Result Display Below: -->
+      <section id="resultOutputArea">
+        <h3>The result of that is equation is:<br>
+          <label id="resultOutput"></label><!-- Result Target --></h3>
+      </section>
+      <br><br> 
 
-    <!-- Area for Historical Record Display Below: -->
-    <section>
-      <h4>Prior Equation History:</h4>
-      <ul id="historyOutput">
-        <!-- <li>${userEquationObject[i].equation}</li> -->
-      </ul>
-    </section>
+      <!-- Area for Historical Record Display Below: -->
+      <section id="historyOutputArea">
+        <h4>Prior Equation History:</h4>
+        <ul id="historyOutput">
+          <!-- <li>${userEquationObject[i].equation}</li> -->
+        </ul>
+      </section>
+  </div>
 
   </body>
 </html>

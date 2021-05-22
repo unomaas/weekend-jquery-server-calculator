@@ -1,3 +1,4 @@
+//#region ⬇⬇ All server setup and global variables below:
 //#region ⬇ Server setup & functionality below:
 // ⬇ Server setup code below:
 const express = require('express');
@@ -14,9 +15,11 @@ app.listen(PORT, () => {
 })
 //#endregion ⬆ Server setup & functionality above.
 
-//#region  ⬇ Creating variables on server to reference later: 
+//#region  ⬇ Creating global variables on server to reference later: 
 const priorEquations = []; // Empty array to hold prior equation's objects.
-//#endregion ⬆ Creating server-side variables above. 
+//#endregion ⬆ Creating global server-side variables above. 
+//#endregion ⬆⬆ All server setup and global variables above. 
+
 
 //#region ⬇ GET & POST Routes below:
 // ⬇ GET priorEquations to load on DOM: 
@@ -25,6 +28,7 @@ app.get('/priorEquations', ( req, res ) => {
   // ⬇ Sending priorEquations array in GET response: 
   res.send( priorEquations );
 }); // End GET priorEquations.
+
 
 // ⬇ POST priorEquations to add to DOM below: 
 app.post('/priorEquations', ( req, res ) => {
@@ -35,10 +39,6 @@ app.post('/priorEquations', ( req, res ) => {
   let userEquationObject = req.body;
   // ⬇ Calling processEquation function to do the math:
   processEquation( userEquationObject );
-  // FOR TOMO: Create the function to do the math, call it below.
-  // FOR TOMO: Have it create/add a key value pair of the result to the array.
-  // FOR TOMO: Then send that back and create the string interpolation to append it.
-  // FOR TOMO: This is a good stopping point and you're doing great! 
   // ⬇ Logging that the POST was successful and what's in the array:
   console.log( 'Server POST: priorEquations is:', priorEquations ); 
   // ⬇ sendStatus 'Created' below: 
@@ -71,54 +71,3 @@ function processEquation(userEquationObject) {
   userEquationObject.result = result;
 } // End processEquation function. 
 //#endregion ⬆ Logic for Equations above. 
-
-
-//  // ⬇ Logic for restartButton below:
-//  app.get('/restart', (req, res) => {
-//   console.log('Got to /restart');
-//   randomNumberGen();
-//   roundCount = 0;
-//   let rounds = {roundCount};
-//   res.send(rounds);
-//   // countRounds();
-// });
-
-// // ⬇ Logic for generating random number to guess below: 
-// function randomNumberGen() {
-//   randomNum = Math.ceil(Math.random() * 25);
-//   console.log('Random number is:', randomNum);
-// }
-
-// // ⬇ Logic for guessing game/numbers below: 
-// function checkGuesses(object) {
-//   console.log('Test Log: in checkGuesses');
-//   // ⬇ Reset guessArray first:
-//   guessArray = [];
-//   for (let guesses in object) {
-//     // ⬇ Placeholder object:
-//     let newObj = {};
-//     console.log(`${guesses}: ${object[guesses]}`); 
-//     // ⬇ If one of the guesses is right, send back true:
-//     if (object[guesses] == randomNum) {
-//       newObj.won = '<label class="bg-success text-white" >WINNER!</label>';
-//     }
-//     // ⬇ If the guesses are too high or low, send back high/low: 
-//     else if (object[guesses] > randomNum){
-//       newObj.won = 'Too high!';
-//     }
-//     else {
-//       newObj.won = 'Too low!';
-//     } // End if/else winner conditional. 
-//     newObj.player = guesses;
-//     newObj.value = object[guesses];
-//   guessArray.push(newObj);
-//   } // End for in loop. 
-//   console.log(guessArray);
-// } // End checkGuesses function. 
-
-// // ⬇ Logic for round counter below: 
-//  function countRounds(){
-//   console.log('Test Log: in countRounds');
-//   roundCount += 1;
-//   console.log('The round count is: ', roundCount);
-//  } // End countRounds function. 
