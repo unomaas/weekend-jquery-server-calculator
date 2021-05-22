@@ -21,20 +21,20 @@
                     - [X] Add jQuery.js file here
                     - [X] Source in bootstrap if you like
 
-- [] LOGIC FUNCTIONALITY
-  - [] On page load, have everything displayed via GET function. 
+- [x] LOGIC FUNCTIONALITY
+  - [x] On page load, have everything displayed via GET function. 
   - [x] User inputs two values.
   - [x] User selects mathematical operation.
   - [x] When the submit button (=) is clicked:
     - [x] capture the input, 
     - [x] put into object, 
     - [x] send this object to the server via a POST. 
-  - [] The clear button should clear the user input fields. 
+  - [x] The clear button should clear the user input fields. 
 
 - [] SERVER-SIDE FUNCTIONALITY
-  - [] Build out the server-side logic to compute the numbers as appropriate. 
-  - [] The server should be able to handle: Addition, Subtraction, Multiplication, and Division.
-  - [] Once the calculation is complete, send back the OK (sendStatus 201). 
+  - [x] Build out the server-side logic to compute the numbers as appropriate. 
+  - [x] The server should be able to handle: Addition, Subtraction, Multiplication, and Division.
+  - [x] Once the calculation is complete, send back the OK (sendStatus 201). 
   - [] You should do a GET request after the POST to get the actual calculation (and to display everything on the DOM).
 
 - [] HISTORY RECORD

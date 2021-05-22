@@ -31,16 +31,19 @@ function renderDom() { // AKA "Get Messages"
     url: '/priorEquations'
   }).then( function( response ) {
     console.log( response );
-    // ⬇ Empty and append each time this runs: 
+    // ⬇ Declaring variables to be used: 
+    let userEquationObject = response;
     let historyOutput = $( '#historyOutput' );
+    let resultOutput = $( '#resultOutput' );
+    // ⬇ Empty and append each time this runs: 
     historyOutput.empty();
+    resultOutput.empty();
+    // ⬇ Looping through the object to append DOM with: 
     for ( let i = 0; i < response.length; i++ ) {
-      let priorEquations = response[i];
-      //⬇ FIX THIS CODE TOMO, IT NEEDS POST OUTPUT FUNCTIONALITY AND TO ADD RESULT KEY
-      // ${priorEquations[i].leftInput} ${priorEquations[i].operator} ${priorEquations[i].rightInput} = ${priorEquations[i].result}
       historyOutput.append(`
-        Test Test Test
+        <li>${userEquationObject[i].equation}</li>
       `)
+      resultOutput.text(`${userEquationObject[i].result}`)
     } // End for loop. 
   }).catch( function( error ) {
     alert( 'Unable to GET prior equations, please try again later.' )
