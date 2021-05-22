@@ -21,15 +21,19 @@ const priorEquations = []; // Empty array to hold prior equation's objects.
 //#region ⬇ GET & POST Routes below:
 // ⬇ GET priorEquations to load on DOM: 
 app.get('/priorEquations', ( req, res ) => {
-  console.log( 'Got to /priorEquations' );
+  console.log( 'Server Log: Got to /priorEquations GET' );
   res.send( priorEquations );
 });
 
-app.post('/guesses', ( req, res ) => {
-  guesses = req.body;
-  console.log( guesses ); 
-  checkGuesses( guesses) ;
-  countRounds();
+app.post('/priorEquations', ( req, res ) => {
+  console.log( 'Server Log: Got to /priorEquations POST, req.body is:', req.body );
+  priorEquations.push(req.body);
+  // FOR TOMO: Create the function to do the math, call it below.
+  // FOR TOMO: Have it create/add a key value pair of the result to the array.
+  // FOR TOMO: Then send that back and create the string interpolation to append it.
+  // FOR TOMO: This is a good stopping point and you're doing great! 
+  console.log( 'Server POST: priorEquations is:', priorEquations ); 
+  // ⬇ sendStatus 'Created' below: 
   res.sendStatus( 201 );
 }) //for posting guesses from client.js
 //#endregion ⬆ GET & POST Routes above.

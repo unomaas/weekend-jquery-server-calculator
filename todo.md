@@ -28,7 +28,7 @@
   - [x] When the submit button (=) is clicked:
     - [x] capture the input, 
     - [x] put into object, 
-    - [] send this object to the server via a POST. 
+    - [x] send this object to the server via a POST. 
   - [] The clear button should clear the user input fields. 
 
 - [] SERVER-SIDE FUNCTIONALITY

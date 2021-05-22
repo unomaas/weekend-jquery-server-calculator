@@ -34,13 +34,16 @@ function renderDom() { // AKA "Get Messages"
     // ⬇ Empty and append each time this runs: 
     let historyOutput = $( '#historyOutput' );
     historyOutput.empty();
-    for ( let i=0; i<response.length; i++ ) {
+    for ( let i = 0; i < response.length; i++ ) {
       let priorEquations = response[i];
+      //⬇ FIX THIS CODE TOMO, IT NEEDS POST OUTPUT FUNCTIONALITY AND TO ADD RESULT KEY
+      // ${priorEquations[i].leftInput} ${priorEquations[i].operator} ${priorEquations[i].rightInput} = ${priorEquations[i].result}
       historyOutput.append(`
+        Test Test Test
       `)
     } // End for loop. 
   }).catch( function( error ) {
-    alert( 'Unable to get prior equations, please try again later.' )
+    alert( 'Unable to GET prior equations, please try again later.' )
     console.log( error );
   }) // End Ajax .then & .catch.
 } // End renderDom function. 
@@ -67,7 +70,7 @@ function clickedEquals() { // AKA "Send Messages" / "SUBMIT"
     // ⬇ GET & Re-render DOM with updated information:
     renderDom();
   }).catch( function( error ) {
-    alert( 'Unable to post prior equations, please try again later.' )
+    alert( 'Unable to POST prior equations, please try again later.' )
     console.log( error );
   }) // End Ajax .then & .catch.
 } // End clickedEquals function. 
