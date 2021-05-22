@@ -31,16 +31,16 @@
     - [x] send this object to the server via a POST. 
   - [x] The clear button should clear the user input fields. 
 
-- [] SERVER-SIDE FUNCTIONALITY
+- [x] SERVER-SIDE FUNCTIONALITY
   - [x] Build out the server-side logic to compute the numbers as appropriate. 
   - [x] The server should be able to handle: Addition, Subtraction, Multiplication, and Division.
   - [x] Once the calculation is complete, send back the OK (sendStatus 201). 
-  - [] You should do a GET request after the POST to get the actual calculation (and to display everything on the DOM).
+  - [x] You should do a GET request after the POST to get the actual calculation (and to display everything on the DOM).
 
-- [] HISTORY RECORD
-  - [] Keep a record of all math operations and solutions on the server.
-  - [] Display a list of all previous calculations ont he page when it loads using a GET request.
-  - [] Update the list when a new calculation is made. 
+- [x] HISTORY RECORD
+  - [x] Keep a record of all math operations and solutions on the server.
+  - [x] Display a list of all previous calculations ont he page when it loads using a GET request.
+  - [x] Update the list when a new calculation is made. 
 
 ​- [x] HTML
   - [x] Create two inputs that take in numbers.  

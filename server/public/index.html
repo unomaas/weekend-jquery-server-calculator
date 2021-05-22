@@ -12,6 +12,7 @@
   <link rel="shortcut icon" href="vendors/favicon.ico" type="image/x-icon">
 </head>
   <body>
+    
     <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
     <header>
       <h1>Server-side Calculator</h1>
@@ -33,18 +34,17 @@
       <input type="number" id="rightInput" class="numberInputs" placeholder="Second Number?">
       <button id="equalsButton" class="">=</button>
       <button id="clearButton" class="">Clear</button> 
-      <!-- // object.operation = value.  -->
     </section>
     <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
 
-    <!-- Area for Result Display Below: -->
+    <!-- Area for Equation Result Display Below: -->
     <section>
       <h3>The result of that is equation is:<br>
-        <label id="resultOutput">${result}</label></h3>
+        <label id="resultOutput"></label></h3>
     </section>
     <br><br> <!-- To Do: Take this out with margin/padding in CSS later. -->
 
-    <!-- Area for Historical Record Below: -->
+    <!-- Area for Historical Record Display Below: -->
     <section>
       <h4>Prior Equation History:</h4>
       <ul id="historyOutput">
