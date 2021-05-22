@@ -120,6 +120,12 @@ function clickedClear() {
 //#endregion ⬆ clickedClear functionality above. 
 //#endregion ⬆ All operator button functionality above. 
 
+
+
+
+
+
+
 // let roundInfo = [];
 
 // function clickedSubmit() {
