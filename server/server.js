@@ -41,8 +41,8 @@ app.post('/priorEquations', ( req, res ) => {
   processEquation( userEquationObject );
   // ⬇ Logging that the POST was successful and what's in the array:
   console.log( 'Server POST: priorEquations is:', priorEquations ); 
-  // ⬇ sendStatus 'Created' below: 
-  res.sendStatus( 201 );
+  // ⬇ sendStatus 'OK' below: 
+  res.sendStatus( 200 );
 }) // End POST priorEquations.
 //#endregion ⬆ GET & POST Routes above.
 

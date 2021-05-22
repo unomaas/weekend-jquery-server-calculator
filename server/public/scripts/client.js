@@ -39,11 +39,11 @@ function renderDom() { // AKA "Get Messages"
     historyOutput.empty();
     resultOutput.empty();
     // ⬇ Looping through the object to append DOM with: 
-    for ( let i = 0; i < response.length; i++ ) {
+    for ( let i = 0; i < userEquationObject.length; i++ ) {
       historyOutput.append(`
         <li>${userEquationObject[i].equation}</li>
       `)
-      resultOutput.text(`${userEquationObject[i].result}`)
+      resultOutput.text( `${userEquationObject[i].result}` )
     } // End for loop. 
   }).catch( function( error ) {
     alert( 'Unable to GET prior equations, please try again later.' )
@@ -59,7 +59,7 @@ function clickedEquals() { // AKA "Send Messages" / "SUBMIT"
   // ⬇ Declaring variables to hold each input value:
   let leftInput = $( '#leftInput' ).val();
   let rightInput = $( '#rightInput' ).val();
-  // ⬇ Adding those inputs to the userEquationObject:
+  // ⬇ Adding those inputs to the global userEquationObject:
   userEquationObject.leftInput = leftInput;
   userEquationObject.rightInput = rightInput;
   console.log( 'Test Log: userEquationObject is:', userEquationObject );
