@@ -18,3 +18,7 @@ li, #resultOutput {
   font-size: 35px;
   text-shadow: 2px 2px black;
 }
+
+.clickedButton {
+  background-color: rgb(58,175,220, );
+}

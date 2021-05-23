@@ -23,7 +23,7 @@ let userEquationObject = {};
 
 
 //#region ⬇⬇ All GET/POST functionality below: 
-//#region ⬇ renderDom functionality below, runs on page load:
+//#region ⬇ GET renderDom functionality below, runs on page load:
 function renderDom() { // AKA "Get Messages"
   // ⬇ GET priorEquations from the server:
   $.ajax({
@@ -53,8 +53,8 @@ function renderDom() { // AKA "Get Messages"
 //#endregion ⬆ renderDom functionality above. 
 
 
-//#region ⬇ clickedEquals functionality below:
-function clickedEquals() { // AKA "Send Messages" / "SUBMIT"
+//#region ⬇ POST clickedEquals functionality below:
+function clickedEquals() { // AKA "Send Messages" / "Submit"
   console.log( 'Test Log: in clickedEquals' );
   // ⬇ Declaring variables to hold each input value:
   let leftInput = $( '#leftInput' ).val();
